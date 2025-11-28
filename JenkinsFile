@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Mengambil kode dari GitHub...'
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Tidak ada proses build untuk HTML/PHP — skip'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Menjalankan test (jika ada)...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploy ke server produksi...'
+            }
+        }
+    }
+}
